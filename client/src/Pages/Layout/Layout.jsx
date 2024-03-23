@@ -10,16 +10,17 @@ import Navbar from "react-bootstrap/Navbar";
 const Layout = () => {
   return (
     <div className="Layout">
-      <Navbar bg="dark" data-bs-theme="dark">
-        <Container>
-          <Navbar.Brand href="#home">Naruto</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="/characters">Characters</Nav.Link>
-            <Nav.Link href="#pricing">About</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
+      <div>
+        <Navbar bg="dark" data-bs-theme="dark">
+          <Container>
+            <Navbar.Brand href="/">Naruto</Navbar.Brand>
+            <Nav className="me-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/characters">Characters</Nav.Link>
+            </Nav>
+          </Container>
+        </Navbar>
+      </div>
       <Outlet />
     </div>
   );

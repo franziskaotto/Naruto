@@ -26,7 +26,7 @@
   max-height: 90%; /* Adjust as needed */
   width: 300px; /* Allow the width to adjust flexibly */
   height: 300px; /* Allow the height to adjust flexibly */
-  background:  url("../../../public/Images/rasengan-removebg-preview.png") center center no-repeat;
+  background:  url("../../../public/Images/Rasengan/rasengan-removebg-preview.png") center center no-repeat;
   background-size: contain;
   animation: pulse 2.5s infinite;
 

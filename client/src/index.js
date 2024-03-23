@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ErrorPage from "./Pages/ErrorPage";
 import Layout from "./Pages/Layout";
 import CharacterCards from "./Pages/CharacterCards";
+import SelectionPage from "./Pages/SelectionPage";
 
 
 
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: "/",
+        element: <SelectionPage />,
+      },
       {
         path: "/characters",
         element: <CharacterCards />,
