@@ -22,7 +22,6 @@ const fetchCharacterData = async () => {
     }
 
     char = await response.json();
-    //console.log(char.characters)
 
     char.characters.forEach((character) => {
       if (

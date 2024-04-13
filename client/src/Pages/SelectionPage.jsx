@@ -3,6 +3,10 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
+
 const SelectionPage = () => {
   return (
     <div className="SelectionPage">
@@ -12,13 +16,14 @@ const SelectionPage = () => {
           src="../../../Images/CharacterTile/AllCharactersRound.jpg"
         />
         <Card.Body>
-          <Card.Title>Characters
-            <Link to={"/characters"} >
-              <Button id="btn" variant="secondary">Need Idea</Button>
+          <Card.Title>
+            Characters
+            <Link to={"/characters"}>
+              <Button id="btn" variant="secondary">
+                <FontAwesomeIcon icon={faArrowRight} />
+              </Button>
             </Link>
           </Card.Title>
-
-          
         </Card.Body>
       </Card>
     </div>
