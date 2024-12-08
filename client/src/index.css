@@ -3,10 +3,6 @@
   box-sizing: border-box;
 }
 
-
-
-
-
 .SelectionPage {
   z-index: -1;
   position: fixed; /* Position the component relative to the viewport */
@@ -14,17 +10,17 @@
   left: 0; /* Align to the left of the viewport */
   width: 100%; /* Full width of the viewport */
   height: 100%; /* Full height of the viewport */
-  background-color: hwb(248 2% 72% / 0.998); /* Background color for the entire viewport */
+  background-color: hwb(
+    248 2% 72% / 0.998
+  ); /* Background color for the entire viewport */
   display: flex; /* Ensure the content inside is flexed */
   justify-content: center; /* Center the content horizontally */
   align-items: center; /* Center the content vertically */
 }
 
 .Cards {
-  background-color: hwb(248 2% 72% / 0.998); 
-
+  background-color: hwb(248 2% 72% / 0.998);
 }
-
 
 #btn {
   margin-left: 2rem;

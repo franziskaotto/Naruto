@@ -10,6 +10,7 @@ import Layout from "./Pages/Layout";
 import CharacterCards from "./Pages/CharacterCards";
 import SelectionPage from "./Pages/SelectionPage";
 import CharacterPage from "./Pages/CharacterPage";
+import Loading from "./Components/Loading";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: `/characters/:id`,
         element: <CharacterPage />,
+      },
+      {
+        path: "/chacters/testing",
+        elememt: <Loading />,
       },
     ],
   },

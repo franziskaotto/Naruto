@@ -8,7 +8,7 @@ import Loading from "../Components/Loading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import Pagination from "react-bootstrap/Pagination";
+//import Pagination from "react-bootstrap/Pagination";
 
 //TODO: make server path as global var
 const serverPath = "http://127.0.0.1:8081/api";
@@ -26,23 +26,13 @@ const fetchCharacters = async () => {
 };
 
 const CharacterCards = () => {
-  const [loading, setLoading] = useState(false);
-  const [characters, setCharacters] = useState(null);
-
-  let active = 1;
-  let items = [];
-  for (let number = 1; number <= 5; number++) {
-    items.push(
-      <Pagination.Item key={number} active={number === active}>
-        {number}
-      </Pagination.Item>
-    );
-  }
+  const [loading, setLoading] = useState(true);
+  const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
     fetchCharacters()
       .then((character) => {
-        setCharacters(character.results);
+        setCharacters(character);
         setLoading(false);
       })
       .catch((error) => {
@@ -54,7 +44,7 @@ const CharacterCards = () => {
   if (loading) {
     return <Loading />;
   }
-
+  console.log("characters: ", characters);
   return (
     <div className="Cards">
       <section>
@@ -81,8 +71,6 @@ const CharacterCards = () => {
                 </Col>
               ))}
           </Row>
-
-          <Pagination>{items}</Pagination>
         </Container>
       </section>
     </div>
