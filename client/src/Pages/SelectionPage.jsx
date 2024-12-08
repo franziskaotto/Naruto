@@ -12,13 +12,14 @@ const SelectionPage = () => {
           src="../../../Images/CharacterTile/AllCharactersRound.jpg"
         />
         <Card.Body>
-          <Card.Title>Characters
-            <Link to={"/characters"} >
-              <Button id="btn" variant="secondary">Need Idea</Button>
+          <Card.Title>
+            Characters
+            <Link to={"/characters"}>
+              <Button id="btn" variant="secondary">
+                view
+              </Button>
             </Link>
           </Card.Title>
-
-          
         </Card.Body>
       </Card>
     </div>

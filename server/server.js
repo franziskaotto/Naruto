@@ -1,25 +1,25 @@
-
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-const cors = require("cors")
+const cors = require("cors");
+
+//pw: test
+//franziskaotto11
 
 const characterRoute = require("./routes/character.route");
 
-const { MONGO_URL, PORT = 8081} = process.env;
+const { MONGO_URL, PORT = 8081 } = process.env;
 
-if(!MONGO_URL) {
+if (!MONGO_URL) {
   console.error("Missing MONGO_URL environment variable");
   process.exit(1);
 }
 
 const app = express();
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 
 app.use("/api/characters", characterRoute);
-
-
 
 const main = async () => {
   await mongoose.connect(MONGO_URL);
@@ -27,19 +27,10 @@ const main = async () => {
   app.listen(PORT, () => {
     console.log(`server is listening on Port http://127.0.0.1:${PORT}/`);
     console.log("Try /api/characters route right now");
-  })
-
-}
+  });
+};
 
 main().catch((err) => {
   console.error(err);
   process.exit(1);
 });
-
-
-
-
-
-
-
-
