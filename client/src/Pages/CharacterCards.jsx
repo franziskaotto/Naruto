@@ -10,12 +10,14 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import Pagination from "react-bootstrap/Pagination";
 
+//TODO: make server path as global var
 const serverPath = "http://127.0.0.1:8081/api";
 
 const fetchCharacters = async () => {
   try {
     const response = await fetch(`${serverPath}/characters`);
     const data = await response.json();
+    console.log(data);
     return data;
   } catch (error) {
     console.error("Error setting characters:", error);
@@ -27,7 +29,7 @@ const CharacterCards = () => {
   const [loading, setLoading] = useState(false);
   const [characters, setCharacters] = useState(null);
 
-  let active = 2;
+  let active = 1;
   let items = [];
   for (let number = 1; number <= 5; number++) {
     items.push(
@@ -37,12 +39,10 @@ const CharacterCards = () => {
     );
   }
 
-  console.log(characters);
-
   useEffect(() => {
     fetchCharacters()
       .then((character) => {
-        setCharacters(character);
+        setCharacters(character.results);
         setLoading(false);
       })
       .catch((error) => {
@@ -59,9 +59,6 @@ const CharacterCards = () => {
     <div className="Cards">
       <section>
         <Container fluid="md">
-          <div>
-            <h1>Characters</h1>
-          </div>
           <Row>
             {characters &&
               characters?.map((character) => (
@@ -72,7 +69,7 @@ const CharacterCards = () => {
                       <Card.Body>
                         <Card.Title>
                           {character.name}
-                          <Link to={"/{"}>
+                          <Link to={`/characters/${character._id}`}>
                             <Button id="btn" variant="secondary">
                               <FontAwesomeIcon icon={faArrowRight} />
                             </Button>

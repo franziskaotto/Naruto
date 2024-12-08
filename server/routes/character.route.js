@@ -2,13 +2,10 @@ const express = require("express");
 const router = express.Router();
 const CharacterModel = require("../db/character.model");
 
-
-
-
 const paginatedResults = () => {
   return async (req, res, next) => {
     const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 10; 
+    const limit = parseInt(req.query.limit) || 10;
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
 

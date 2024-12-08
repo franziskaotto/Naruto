@@ -9,8 +9,7 @@ import ErrorPage from "./Pages/ErrorPage";
 import Layout from "./Pages/Layout";
 import CharacterCards from "./Pages/CharacterCards";
 import SelectionPage from "./Pages/SelectionPage";
-
-
+import CharacterPage from "./Pages/CharacterPage";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/characters",
         element: <CharacterCards />,
+      },
+      {
+        path: `/characters/:id`,
+        element: <CharacterPage />,
       },
     ],
   },
