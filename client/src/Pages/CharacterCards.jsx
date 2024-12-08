@@ -64,7 +64,7 @@ const CharacterCards = () => {
           </div>
           <Row>
             {characters &&
-              characters.map((character) => (
+              characters?.map((character) => (
                 <Col sm={4} key={character._id}>
                   <div key={character._id}>
                     <Card style={{ width: "18rem" }}>
